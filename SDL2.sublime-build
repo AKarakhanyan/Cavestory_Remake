@@ -1,0 +1,16 @@
+{
+  "shell_cmd": "g++ -std=c++11 *.cpp -o \"${file_path}/${file_base_name}\" -framework SDL2 -F/Library/Frameworks -I/Library/Frameworks/SDL2.framework/Headers",
+  "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+  "working_dir": "${file_path}",
+  "selector": "source.c99, source.c++",
+
+  "variants":
+  [
+    {
+      "name": "Run",
+      "shell_cmd": "g++ -std=c++11 *.cpp -o \"${file_path}/${file_base_name}\" -framework SDL2 -F/Library/Frameworks -I/Library/Frameworks/SDL2.framework/Headers && \"${file_path}/${file_base_name}\"",
+      "working_dir": "${file_path}",
+      "selector": "source.c99, source.c++"
+    }
+  ]
+}
